@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">Hex converter</string>
+
+    <string-array name="titles">
+        <item>Doc</item>
+        <item>Main</item>
+        <item>About</item>
+    </string-array>
+    <string name="clickHere" translatable="false">
+<i>
+<u>或者点击这里…</u>
+</i>
+</string>
+    <string name="down" translatable="false">∨</string>
+    <string name="paste">Paste</string>
+    <string name="done">Contents have been copied to the clipboard</string>
+    <string name="copy">Copy</string>
+    <string name="clipbaord3">Clipboard is empty</string>
+    <string name="clipbaord2">Error Data--</string>
+    <string name="clipbaord1">Error Hex Data--</string>
+    <string name="about_3"><a href="https://github.com/rtugeek/Hex-converter">View Source Code On Github</a></string>
+    <string name="about_2">Developers?</string>
+    <string name="about_1">Version 3.6  \n If you have any suggestions or comments: \n E-mail: rtugeek@gmail.com</string>
+    <string name="no360" translatable="false">未安装360手机助手</string>
+    <string name="say">Long press the edit box,copy or paste</string>
+</resources>

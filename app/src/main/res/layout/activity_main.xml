@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_dl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <com.rey.material.widget.TabPageIndicator
+                style="@style/TabPageIndicator"
+                android:id="@+id/main_tpi"
+                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:paddingLeft="60dp"
+                android:clipToPadding="false"
+                android:background="@color/colorPrimaryDark"/>
+
+            <com.example.jzzh.CustomViewPager
+                android:id="@+id/main_vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+        <com.rey.material.widget.SnackBar
+            android:id="@+id/main_sn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:visibility="gone"
+            android:layout_gravity="bottom"/>
+
+    </FrameLayout>
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/input"
+    android:layout_height="fill_parent">
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.rey.material.widget.Button
+                style="@style/FlatButtonRippleStyle"
+                app:rd_enable="true"
+                android:id="@+id/input_btn_1"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="1"
+                android:text="1"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_2"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="2"
+                android:text="2"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_3"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="3"
+                android:text="3"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 app:rd_enable="true"
+                android:id="@+id/input_btn_10"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="10"
+                android:text="A"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 app:rd_enable="true"
+                android:id="@+id/input_btn_11"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="11"
+                android:text="B"
+                android:textColor="#0099CC" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 app:rd_enable="true"
+                android:id="@+id/input_btn_4"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="4"
+                android:text="4"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_5"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="5"
+                android:text="5"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_6"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="6"
+                android:text="6"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_12"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="12"
+                android:text="C"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_13"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="13"
+                android:text="D"
+                android:textColor="#0099CC" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_7"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="7"
+                android:text="7"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_8"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:textColor="#0099CC"
+                android:layout_margin="2dp"
+                
+                android:tag="8"
+                android:text="8" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_9"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="9"
+                android:text="9"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_14"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="14"
+                android:text="E"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_15"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="15"
+                android:text="F"
+                android:textColor="#0099CC" />
+
+        </TableRow>
+        
+        <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_0"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="0"
+                android:text="0"
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button                 
+                style="@style/FlatButtonRippleStyle"                 
+                app:rd_enable="true"
+                android:id="@+id/input_btn_16"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+                
+                android:tag="."
+                android:text="."
+                android:textColor="#0099CC" />
+
+            <com.rey.material.widget.Button
+                style="@style/FlatButtonRippleStyle"
+                app:rd_enable="true"
+                android:id="@+id/input_btn_18"
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:layout_margin="2dp"
+
+                android:tag="﹀"
+                android:text="﹀"
+                android:textColor="#0099CC" />
+
+            </TableRow>
+    </TableLayout>
+
+    <com.rey.material.widget.Button
+        style="@style/FlatButtonRippleStyle"
+        app:rd_enable="true"
+        android:id="@+id/input_btn_17"
+        android:layout_width="128dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="2dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignBottom="@+id/tableLayout1"
+        android:layout_marginBottom="2dp"
+        android:tag="\B"
+        android:text="Del"
+        android:textColor="#0099CC" />
+
+</RelativeLayout>

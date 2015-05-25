@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff">
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="2dp" 
+        android:layout_marginBottom="2dp">
+
+        <com.rey.material.widget.Button
+            style="@style/FlatButtonRippleStyle"
+            app:rd_enable="true"
+            android:id="@+id/btn_copy"
+            android:layout_width="50dp"
+            android:layout_height="31dp"
+            android:layout_margin="2dp"
+            android:text="@string/copy"
+            android:textColor="#0099CC" />
+
+        <com.rey.material.widget.Button
+            style="@style/FlatButtonRippleStyle"
+            app:rd_enable="true"
+            android:id="@+id/btn_paste"
+            android:layout_width="50dp"
+            android:layout_height="31dp"
+            android:layout_margin="2dp"
+            android:text="@string/paste"
+            android:textColor="#0099CC" />
+    </TableRow>
+
+</RelativeLayout>
