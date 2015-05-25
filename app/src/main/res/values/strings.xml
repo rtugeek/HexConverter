@@ -19,7 +19,7 @@
     <string name="clipbaord3">Clipboard is empty</string>
     <string name="clipbaord2">Error Data--</string>
     <string name="clipbaord1">Error Hex Data--</string>
-    <string name="about_3"><a href="https://github.com/rtugeek/Hex-converter">View Source Code On Github</a></string>
+    <string name="about_3"><a href="https://github.com/rtugeek/HexConverter">View Source Code On Github</a></string>
     <string name="about_2">Developers?</string>
     <string name="about_1">Version 3.6  \n If you have any suggestions or comments: \n E-mail: rtugeek@gmail.com</string>
     <string name="no360" translatable="false">未安装360手机助手</string>

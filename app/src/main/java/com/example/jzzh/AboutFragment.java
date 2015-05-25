@@ -18,7 +18,6 @@ public class AboutFragment extends Fragment{
 	
 	public static AboutFragment newInstance(){
 		AboutFragment fragment = new AboutFragment();
-		
 		return fragment;
 	}
 
@@ -31,7 +30,7 @@ public class AboutFragment extends Fragment{
         aboutFragment.findViewById(R.id.txt_code).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://github.com/rtugeek/Hex-converter"; // web address
+                String url = "https://github.com/rtugeek/HexConverter"; // web address
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 startActivity(intent);

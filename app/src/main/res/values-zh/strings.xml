@@ -7,7 +7,7 @@
     <string name="clipbaord3">剪切板中无数据</string>
     <string name="clipbaord2">剪切板中字符格式不正确——</string>
     <string name="clipbaord1">剪切板中数字大于进制值——</string>
-    <string name="about_3">VB交流群:251976861\n爱自学编程:323572554\n安卓交流群:252706451\n<a href="https://github.com/rtugeek/Hex-converter">View Source Code On Github</a></string>
+    <string name="about_3">VB交流群:251976861\n爱自学编程:323572554\n安卓交流群:252706451\n<a href="https://github.com/rtugeek/HexConverter">View Source Code On Github</a></string>
     <string name="about_2">开发者?加入我们！</string>
     <string name="about_1">Version 3.6\n有什么建议或意见:\n邮箱:rtugeek@gmail.com</string>
     <string name="say">长按编辑框复制,粘贴</string>
