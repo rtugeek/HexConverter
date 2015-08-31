@@ -13,13 +13,13 @@ android {
     }
     productFlavors{
         "default" {}
-        "91" {}
-        AN_ZHUO {}
+//        "91" {}
+//        AN_ZHUO {}
 //        AN_ZHI {}
 //        MU_MA_YI {}
-        TENCENT {}
-        QI_HU_360 {}
-        BAI_DU {}
+//        TENCENT {}
+//        QI_HU_360 {}
+//        BAI_DU {}
 //        WANGYI {} enterprise only
 //        PP {}
 //        SAMSUNG {}
@@ -41,7 +41,7 @@ dependencies {
     compile 'com.android.support:cardview-v7:21.0.3'
 }
 
-//Ìæ»»AndroidManifest.xmlµÄUMENG_CHANNEL_VALUE×Ö·û´®ÎªÇþµÀÃû³Æ By Remex Huang
+//ï¿½æ»»AndroidManifest.xmlï¿½ï¿½UMENG_CHANNEL_VALUEï¿½Ö·ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ By Remex Huang
 android.applicationVariants.all { variant ->
     variant.outputs.each { output ->
         output.processManifest.doLast {

@@ -24,21 +24,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="net.youmi.android.AdBrowser"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:theme="@android:style/Theme.Light.NoTitleBar" >
-        </activity>
-        <service
-            android:name="net.youmi.android.AdService" >
-        </service>
-        <receiver
-            android:name="net.youmi.android.AdReceiver" >
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
 
         <meta-data android:value="53285a2a56240b9ace024941" android:name="UMENG_APPKEY"></meta-data>
         <meta-data android:value="UMENG_CHANNEL_VALUE" android:name="UMENG_CHANNEL"/>
