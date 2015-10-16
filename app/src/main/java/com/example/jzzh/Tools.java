@@ -5,52 +5,67 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import android.content.Context;
 
-public class All {
+public class Tools {
 	static BigInteger mBigData1, mBigData2;
 	static String digths = "0123456789ABCDEF";
-	public static String baseString(BigInteger num,int base){
+
+	/**
+	 * @param num
+	 * @param base
+	 * @return
+	 */
+	public static String integerConvertTo10(BigInteger num, int base){
 		String s = "";
 		mBigData2 =new BigInteger(base+"");
 		while(!num.toString().equals("0")){
 			s =digths.charAt(num.remainder(mBigData2).intValue()) + s;
 			num=num.divide(mBigData2);
-			
 		}
 		if(s.equals(""))s="0";
 		return s;
 	}
 
-	public static String changeNum(String num,int destBase,int srcBase){
-		if(srcBase == destBase){
+
+	/**
+	 * @param num
+	 * @param fromHex
+	 * @param toHex
+	 * @return
+	 */
+	public static String integerConverter(String num, int fromHex, int toHex){
+		if(toHex == fromHex){
 			return num;
 		}
 		char[] chars = num.toCharArray();
 		int len = chars.length;
-		if(destBase != 10){
-			num = changeNum(num,10,srcBase);
-			
+		if(fromHex != 10){
+			num = integerConverter(num, 10, toHex);
+			return integerConvertTo10(new BigInteger(num + ""), fromHex);
 		}else{
 			mBigData1 =new BigInteger("0");
 			for(int i = len - 1; i >=0; i--){
-				mBigData2 =new BigDecimal(digths.indexOf(chars[i])*Math.pow(srcBase, len - i - 1)).toBigInteger();
+				mBigData2 =new BigDecimal(digths.indexOf(chars[i])*Math.pow(toHex, len - i - 1)).toBigInteger();
 				mBigData1 = mBigData1.add(mBigData2);
 			}
 			return mBigData1.toString();
-			
 		}
-		return baseString(new BigInteger(num+""),destBase);
 	}
-	
-	
-	
-	
-	public static String converToOther(String data,int toHex,int fromHex) {
+
+
+	/**
+	 * Converting without integer part.
+	 * @param data
+	 * @param toHex
+	 * @param fromHex
+	 * @return
+	 */
+	public static String decimalConverter(String data, int toHex, int fromHex) {
 		
 		if(toHex == fromHex){
 			return data;
 		}
 		if(toHex != 10){
-			data = converToDecimal(data, toHex);
+			data = decimalConvertTo10(data, toHex);
 		}
 		char[] chars = digths.toCharArray();
 		int wei =0,integer;
@@ -84,7 +99,13 @@ public class All {
 		return sum2;
 	}
 
-	public static String converToDecimal(String data,int hex) {
+	/**
+	 *
+	 * @param data
+	 * @param hex
+	 * @return
+	 */
+	public static String decimalConvertTo10(String data, int hex) {
 		
         char[] chars = data.toCharArray();
         BigDecimal sum=new BigDecimal("0");

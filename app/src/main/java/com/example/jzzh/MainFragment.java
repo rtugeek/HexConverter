@@ -31,10 +31,10 @@ public class MainFragment extends Fragment{
 	private EditText focusingEditText;
 	private int nowFocusHex = 10;
 	private Button btnChooseHex,copy,paste;
-	private Button[] hexBtn = new Button[12], keyBtn = new Button[19];
+	private Button[] hexBtn = new Button[12], keyboardBtn = new Button[19];
 	private PopupWindow operateWindow, hexWindow;
 	private MyTextWatcher textWatcher =new MyTextWatcher();
-	private ClipboardManager cm;
+	private ClipboardManager clipboardManager;
 	private ImageView[] clear = new ImageView[5];
 	private Animation show,hide;
 	private RelativeLayout inputView;
@@ -58,7 +58,7 @@ public class MainFragment extends Fragment{
 			@Override
 			public void onAnimationStart(Animation animation) {
 				for(int i = 0;i < 18; i++){
-					keyBtn[i].setClickable(true);
+					keyboardBtn[i].setClickable(true);
 				}
 				isShow = true;
 			}
@@ -82,7 +82,7 @@ public class MainFragment extends Fragment{
 			public void onAnimationStart(Animation animation) {
 				isShow = false;
 				for (int i = 0; i < 18; i++) {
-					keyBtn[i].setClickable(false);
+					keyboardBtn[i].setClickable(false);
 				}
 				if (!isInit) {
 					RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-1, -2);
@@ -104,7 +104,7 @@ public class MainFragment extends Fragment{
 				}
 			}
 		});
-		cm=(ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+		clipboardManager =(ClipboardManager)getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
 		LayoutInflater li = getActivity().getLayoutInflater();
 
         //init operate window
@@ -142,10 +142,10 @@ public class MainFragment extends Fragment{
 		});
         inputView =(RelativeLayout)mainView.findViewById(R.id.inputx);
         //init input buttons
-		for(int i = 0;i < keyBtn.length; i++){
-			keyBtn[i] = (Button)inputView.findViewById(All.getIdByResourceName(getActivity(), "input_btn_" + i));
+		for(int i = 0;i < keyboardBtn.length; i++){
+			keyboardBtn[i] = (Button)inputView.findViewById(Tools.getIdByResourceName(getActivity(), "input_btn_" + i));
 			if(i == 17){
-				keyBtn[i].setOnClickListener(new OnClickListener() {
+				keyboardBtn[i].setOnClickListener(new OnClickListener() {
 
 					@Override
 					public void onClick(View v) {
@@ -158,7 +158,7 @@ public class MainFragment extends Fragment{
 						}
 					}
 				});
-				keyBtn[i].setOnLongClickListener(new View.OnLongClickListener() {
+				keyboardBtn[i].setOnLongClickListener(new View.OnLongClickListener() {
 
 					@Override
 					public boolean onLongClick(View v) {
@@ -168,7 +168,7 @@ public class MainFragment extends Fragment{
 					}
 				});
 			}else if(i == 18){
-				keyBtn[i].setOnClickListener(new OnClickListener() {
+				keyboardBtn[i].setOnClickListener(new OnClickListener() {
 
 					@Override
 					public void onClick(View v) {
@@ -176,7 +176,7 @@ public class MainFragment extends Fragment{
 					}
 				});
 			}else{
-				keyBtn[i].setOnClickListener(new OnClickListener() {
+				keyboardBtn[i].setOnClickListener(new OnClickListener() {
 
 					@Override
 					public void onClick(View v) {
@@ -191,7 +191,7 @@ public class MainFragment extends Fragment{
 
         //init edit texts
 		for(int i = 0;i < 5;i++){
-			editTexts[i] = (EditText)mainView.findViewById(All.getIdByResourceName(getActivity(), "EditText" + i));
+			editTexts[i] = (EditText)mainView.findViewById(Tools.getIdByResourceName(getActivity(), "EditText" + i));
 			editTexts[i].setOnFocusChangeListener(new focusL());
 			editTexts[i].setInputType(InputType.TYPE_NULL);
 			editTexts[i].setHorizontallyScrolling(false);
@@ -220,7 +220,7 @@ public class MainFragment extends Fragment{
 
 						@Override
 						public void onClick(View v) {
-							cm.setText(etx.getText().toString().replaceAll(" ", ""));
+							clipboardManager.setText(etx.getText().toString().replaceAll(" ", ""));
 							Toast.makeText(getActivity(), getString(R.string.done), Toast.LENGTH_SHORT).show();
 						}
 					});
@@ -228,8 +228,8 @@ public class MainFragment extends Fragment{
 
 						@Override
 						public void onClick(View v) {
-							if(cm.hasText()){
-								final String s=cm.getText().toString().replaceAll(" ", "");
+							if(clipboardManager.hasText()){
+								final String s= clipboardManager.getText().toString().replaceAll(" ", "");
 								String sss;
 								String ss="0123456789ABCDEF.";
 								for(int i = 0;i<s.length();i++){
@@ -262,7 +262,7 @@ public class MainFragment extends Fragment{
 
         //init clear buttons
 		for(int i = 0;i < 5; i++){
-			clear[i] = (ImageView)mainView.findViewById(All.getIdByResourceName(getActivity(), "clear" + i));
+			clear[i] = (ImageView)mainView.findViewById(Tools.getIdByResourceName(getActivity(), "clear" + i));
 			clear[i].setVisibility(View.GONE);
 			clear[i].setOnClickListener(new OnClickListener() {
 
@@ -274,7 +274,7 @@ public class MainFragment extends Fragment{
 		}
         //init hex buttons
 		for(int i = 0;i < 12; i++){
-			hexBtn[i] = (Button)hexView.findViewById(All.getIdByResourceName(getActivity(), "hex_btn_" + (i+1)));
+			hexBtn[i] = (Button)hexView.findViewById(Tools.getIdByResourceName(getActivity(), "hex_btn_" + (i + 1)));
 			if(i == 11){
 				hexBtn[i].setOnClickListener(new OnClickListener() {
 					@Override
@@ -334,12 +334,12 @@ public class MainFragment extends Fragment{
 				}
 			}
 			for(int i = 2;i < 16;i++){
-				if(Integer.parseInt(keyBtn[i].getTag().toString()) >= Integer.parseInt(focusingEditText.getTag().toString())){
-					keyBtn[i].setTextColor(getResources().getColor(R.color.input_disenable_color));
-					keyBtn[i].setEnabled(false);
+				if(Integer.parseInt(keyboardBtn[i].getTag().toString()) >= Integer.parseInt(focusingEditText.getTag().toString())){
+					keyboardBtn[i].setTextColor(getResources().getColor(R.color.input_disenable_color));
+					keyboardBtn[i].setEnabled(false);
 				}else{
-					keyBtn[i].setEnabled(true);
-					keyBtn[i].setTextColor(getResources().getColor(R.color.input_enable_color));
+					keyboardBtn[i].setEnabled(true);
+					keyboardBtn[i].setTextColor(getResources().getColor(R.color.input_enable_color));
 				}
 			}
 			if(!isShow){
@@ -374,13 +374,13 @@ public class MainFragment extends Fragment{
 					hex1 =Integer.parseInt(editTexts[i].getTag().toString());
 					if(hex1 != nowFocusHex){
 						if(s.toString().indexOf(".")==-1){
-							result=All.changeNum(s.toString(), hex1, nowFocusHex);
+							result= Tools.integerConverter(s.toString(), hex1, nowFocusHex);
 						}else{
 							ss = s.toString().split("\\.");
-							if(ss.length ==1 ){
-								result=All.changeNum(ss[0], hex1, nowFocusHex);
+							if(ss.length ==1 ){ // Determine whether there is a decimal point
+								result= Tools.integerConverter(ss[0], hex1, nowFocusHex);
 							}else{
-								result=All.changeNum(ss[0], hex1, nowFocusHex)+"."+All.converToOther(ss[1], nowFocusHex, hex1);
+								result= Tools.integerConverter(ss[0], hex1, nowFocusHex)+"."+ Tools.decimalConverter(ss[1], nowFocusHex, hex1);
 							}
 						}
 						if(result.length()>16){
@@ -400,8 +400,8 @@ public class MainFragment extends Fragment{
 						editTexts[i].setMinLines(1);
 					}
 				}
-				keyBtn[16].setTextColor(getResources().getColor(R.color.input_disenable_color));
-				keyBtn[16].setEnabled(false);
+				keyboardBtn[16].setTextColor(getResources().getColor(R.color.input_disenable_color));
+				keyboardBtn[16].setEnabled(false);
 			}
 		}
 
@@ -410,8 +410,8 @@ public class MainFragment extends Fragment{
 									  int after) {
 
 			if(s.toString().trim().length()==0){
-				keyBtn[16].setTextColor(getResources().getColor(R.color.input_disenable_color));
-				keyBtn[16].setEnabled(false);
+				keyboardBtn[16].setTextColor(getResources().getColor(R.color.input_disenable_color));
+				keyboardBtn[16].setEnabled(false);
 			}
 		}
 
@@ -429,11 +429,11 @@ public class MainFragment extends Fragment{
 	 */
 	private void hasPoint(String s){
 		if(s.indexOf(".")!=-1||s.length()==0){
-			keyBtn[16].setTextColor(getResources().getColor(R.color.input_disenable_color));
-			keyBtn[16].setEnabled(false);
+			keyboardBtn[16].setTextColor(getResources().getColor(R.color.input_disenable_color));
+			keyboardBtn[16].setEnabled(false);
 		}else{
-			keyBtn[16].setEnabled(true);
-			keyBtn[16].setTextColor(getResources().getColor(R.color.input_enable_color));
+			keyboardBtn[16].setEnabled(true);
+			keyboardBtn[16].setTextColor(getResources().getColor(R.color.input_enable_color));
 		}
 	}
 
