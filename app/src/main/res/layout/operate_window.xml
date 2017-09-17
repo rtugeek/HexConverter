@@ -14,9 +14,9 @@
         android:layout_marginRight="2dp" 
         android:layout_marginBottom="2dp">
 
-        <com.rey.material.widget.Button
-            style="@style/FlatButtonRippleStyle"
-            app:rd_enable="true"
+        <Button
+
+
             android:id="@+id/btn_copy"
             android:layout_width="50dp"
             android:layout_height="31dp"
@@ -24,9 +24,9 @@
             android:text="@string/copy"
             android:textColor="#0099CC" />
 
-        <com.rey.material.widget.Button
-            style="@style/FlatButtonRippleStyle"
-            app:rd_enable="true"
+        <Button
+
+
             android:id="@+id/btn_paste"
             android:layout_width="50dp"
             android:layout_height="31dp"

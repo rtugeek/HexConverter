@@ -17,9 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_1"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -29,9 +27,7 @@
                 android:text="3"
                 android:textColor="#0099CC" />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_2"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -41,9 +37,7 @@
                 android:text="4"
                 android:textColor="#0099CC" />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_3"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -53,9 +47,7 @@
                 android:text="5"
                 android:textColor="#0099CC" />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_4"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -72,9 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_5"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -84,9 +74,7 @@
                 android:text="7"
                 android:textColor="#0099CC" />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_6"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -96,9 +84,7 @@
                 android:tag="9"
                 android:text="9" />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_7"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -108,9 +94,7 @@
                 android:text="11"
                 android:textColor="#0099CC" />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_8"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -127,9 +111,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_9"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -139,9 +121,7 @@
                 android:tag="13"
                 android:text="13"  />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_10"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -151,9 +131,7 @@
                 android:tag="14"
                 android:text="14"  />
 
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_11"
                 android:layout_width="50dp"
                 android:layout_height="31dp"
@@ -162,9 +140,7 @@
                 android:tag="15"
                 android:layout_margin="2dp"
                 android:text="15" />
-            <com.rey.material.widget.Button
-                style="@style/FlatButtonRippleStyle"
-                app:rd_enable="true"
+            <Button
                 android:id="@+id/hex_btn_12"
                 android:layout_width="50dp"
                 android:layout_height="31dp"

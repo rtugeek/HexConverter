@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.View.OnClickListener;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -24,7 +25,6 @@ import android.widget.Gallery.LayoutParams;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-import com.rey.material.widget.Button;
 
 public class MainFragment extends Fragment{
 	private EditText[] editTexts = new EditText[5];

@@ -173,9 +173,7 @@
         android:background="#ECECEC"
         android:orientation="horizontal" >
 
-        <com.rey.material.widget.Button
-            style="@style/FlatButtonRippleStyle"
-            app:rd_enable="true"
+        <Button
             android:id="@+id/btn_more_hex"
             android:layout_width="30dp"
             android:layout_height="30dp"
