@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/rtugeek/HexConverter/master/screenshot.png)  
+![](./screenshot/screenshot.png)  
 
 License
 --------

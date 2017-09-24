@@ -7,29 +7,38 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="scalePopup">
-        <item name="android:windowEnterAnimation">@anim/scale_down</item>
-        <item name="android:windowExitAnimation">@anim/scale_up</item>
-    </style>
 
-    <style name="calculate_card">
+    <style name="CalculateCard">
+        <item name="android:padding">10dp</item>
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
     </style>
 
     <style name="CardLabel">
         <item name="android:textColor">@color/white</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">@drawable/bg_circle</item>
         <item name="android:gravity">center</item>
         <item name="android:textSize">30sp</item>
+        <item name="android:padding">10dp</item>
     </style>
 
     <style name="CardEditText">
         <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
         <item name="android:background">@null</item>
         <item name="android:inputType">numberDecimal</item>
-        <item name="android:ems">10</item>
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:padding">10dp</item>
+        <item name="android:ems">28</item>
     </style>
+
+    <style name="Key">
+        <item name="android:textColor">@color/colorTextPrimary</item>
+        <item name="android:background">@drawable/btn_key</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="MyStyle.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="MyStyle.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

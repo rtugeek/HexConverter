@@ -1,27 +1,21 @@
 <resources>
 
-    <string name="app_name">Hex converter</string>
-
-    <string-array name="titles">
-        <item>Doc</item>
-        <item>Main</item>
-        <item>About</item>
-    </string-array>
-    <string name="clickHere" translatable="false">
-<i>
-<u>或者点击这里…</u>
-</i>
-</string>
+    <string name="app_name">Hex Converter</string>
     <string name="down" translatable="false">∨</string>
-    <string name="paste">Paste</string>
     <string name="done">Contents have been copied to the clipboard</string>
-    <string name="copy">Copy</string>
-    <string name="clipbaord3">Clipboard is empty</string>
-    <string name="clipbaord2">Error Data--</string>
-    <string name="clipbaord1">Error Hex Data--</string>
+    <string name="clipboard_3">Clipboard is empty</string>
+    <string name="clipboard_2">Incorrect data--</string>
+    <string name="clipboard_1">Number do not match the radix--</string>
     <string name="about_3"><a href="https://github.com/rtugeek/HexConverter">View Source Code On Github</a></string>
-    <string name="about_2">Developers?</string>
-    <string name="about_1">Version 3.6  \n If you have any suggestions or comments: \n E-mail: rtugeek@gmail.com</string>
-    <string name="no360" translatable="false">未安装360手机助手</string>
-    <string name="say">Long press the edit box,copy or paste</string>
+    <string name="about_1">Version 4.0  \n If you have any suggestion or comment: \n E-mail: rtugeek@gmail.com</string>
+    <string name="cancel">CANCEL</string>
+    <string name="doc">DOC</string>
+    <string name="about">ABOUT</string>
+    <string name="hint">Hint\n1.Long press input box to paste clipboard data.\n2.Long press DEL button to clear number.</string>
+    <string name="radix">radix</string>
+    <string name="hint1">Enter number</string>
+    <string name="more_radix"><![CDATA[< More radix click here]]></string>
+    <string name="banner_ad_unit_id_about" translatable="false">ca-app-pub-1898879602336181/2071744470</string>
+    <string name="banner_ad_unit_id_doc" translatable="false">ca-app-pub-1898879602336181/9790522205</string>
+    <string name="banner_ad_app_id" translatable="false">ca-app-pub-1898879602336181~9491069494</string>
 </resources>

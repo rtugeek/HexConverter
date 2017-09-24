@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:background="#FBFBFB"
+    android:id="@+id/input"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#A7A7A7"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <Button
+                style="@style/Key"
+                android:id="@+id/input_btn_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="1"
+                android:text="1"/>
+
+            <Button
+                android:id="@+id/input_btn_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="4"
+                android:text="4"
+                 style="@style/Key"/>
+
+            <Button
+                android:id="@+id/input_btn_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="7"
+                android:text="7"
+                 style="@style/Key"/>
+
+            <Button
+                android:id="@+id/input_btn_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:tag="0"
+                android:text="0"
+                 style="@style/Key"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/input_btn_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="2"
+                android:text="2"
+                 style="@style/Key"/>
+
+            <Button
+                android:id="@+id/input_btn_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="5"
+                android:text="5"
+                 style="@style/Key"/>
+            <Button
+                android:id="@+id/input_btn_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="8"
+
+                android:text="8"
+                 style="@style/Key"/>
+
+            <Button
+                android:id="@+id/input_btn_16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:tag="."
+                android:text="."
+                 style="@style/Key"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/input_btn_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="3"
+                android:text="3"
+                 style="@style/Key"/>
+
+            <Button
+                android:id="@+id/input_btn_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="6"
+                android:text="6"
+                 style="@style/Key"/>
+
+            <Button
+                android:id="@+id/input_btn_9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="9"
+                android:text="9"
+                 style="@style/Key"/>
+
+            <Button
+                android:id="@+id/input_btn_18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:tag="﹀"
+                android:text="﹀"
+                style="@style/Key"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="#F5F5F5"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        style="@style/Key"
+                        android:id="@+id/input_btn_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="10"
+                        android:text="A" />
+                    <Button
+                        android:id="@+id/input_btn_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="12"
+                        android:text="C"
+                         style="@style/Key"/>
+                    <Button
+                        android:id="@+id/input_btn_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="14"
+                        android:text="E"
+                         style="@style/Key"/>
+
+                    <Button
+                        android:id="@+id/input_btn_19"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:tag="\B"
+                        android:text="COPY"
+                        style="@style/Key"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/input_btn_11"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="11"
+                        android:text="B"
+                         style="@style/Key"/>
+
+                    <Button
+                        android:id="@+id/input_btn_13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="13"
+                        android:text="D"
+                         style="@style/Key"/>
+
+                    <Button
+                        android:id="@+id/input_btn_15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:tag="15"
+                        android:text="F"
+                         style="@style/Key"/>
+
+                    <Button
+                        android:id="@+id/input_btn_17"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:tag="\B"
+                        android:text="Del"
+                        style="@style/Key"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
