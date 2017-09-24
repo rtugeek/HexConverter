@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             mKeyboard.setRadix(radixEditText.getRadix());
                             mKeyboard.show();
                             mCurrentEditText = radixEditText;
+                            updateColor(radixEditText.getRadix());
                             break;
                     }
                     return false;
@@ -108,6 +109,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             });
         }
 
+    }
+
+    /**
+     * highlight focused edit text
+     * @param radix
+     */
+    private void updateColor(int radix){
+        for (RadixEditText radixEditText : RadixEditText.getRadixEditTexts()) {
+            if(radixEditText.getRadix() == 10) continue;
+            if(radixEditText.getRadix() == radix){
+                int color = getResources().getColor(R.color.colorPrimary);
+                radixEditText.setTextColor(color);
+                radixEditText.setHintTextColor(color);
+                continue;
+            }
+            radixEditText.setTextColor(0xFF616161);
+            radixEditText.setHintTextColor(0xFFD4D4D4);
+        }
     }
 
     @Override

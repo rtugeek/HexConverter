@@ -6,13 +6,19 @@ android {
 
     defaultConfig {
         applicationId "com.freegeek.jzzh"
+//        applicationId "com.example.jzzh"
         minSdkVersion 15
         versionCode 9
         versionName "4.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     productFlavors {
-        DEFAULT {}
+        DEFAULT {
+            applicationId "com.freegeek.jzzh"
+        }
+        example {
+            applicationId "com.example.jzzh"
+        }
     }
     buildTypes {
 
