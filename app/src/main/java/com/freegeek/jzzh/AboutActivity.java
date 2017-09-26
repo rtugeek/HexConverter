@@ -12,7 +12,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-public class AboutActivity extends AppCompatActivity {
+public class AboutActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,15 +22,6 @@ public class AboutActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        findViewById(R.id.txt_code).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String url = "https://github.com/rtugeek/HexConverter";
-                Intent intent = new Intent(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(url));
-                startActivity(intent);
-            }
-        });
         MobileAds.initialize(this, getString(R.string.banner_ad_app_id));
         AdView  adView= (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest
@@ -49,5 +40,17 @@ public class AboutActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.linear_code:
+                String url = "https://github.com/rtugeek/HexConverter";
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(url));
+                startActivity(intent);
+                break;
+        }
     }
 }

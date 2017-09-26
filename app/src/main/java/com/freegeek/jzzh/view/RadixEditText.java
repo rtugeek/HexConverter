@@ -97,7 +97,7 @@ public class RadixEditText extends AppCompatEditText{
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String input = charSequence.toString();
                 //Prevent the infinite loop.
-                if(isFocused()){
+                if(mFocusedEditText == RadixEditText.this){
                     //If input empty text, clear all EditText
                     if(TextUtils.isEmpty(input)){
                         for (RadixEditText mRadixEditText : mRadixEditTexts){

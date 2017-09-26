@@ -6,16 +6,21 @@
     <string name="clipboard_3">Clipboard is empty</string>
     <string name="clipboard_2">Incorrect data--</string>
     <string name="clipboard_1">Number do not match the radix--</string>
-    <string name="about_3"><a href="https://github.com/rtugeek/HexConverter">View Source Code On Github</a></string>
-    <string name="about_1">Version 4.0  \n If you have any suggestion or comment: \n E-mail: rtugeek@gmail.com</string>
+    <string name="version">Version</string>
+    <string name="email" translatable="false">rtugeek@gmail.com</string>
+    <string name="changelog">Changelog</string>
+    <string name="source_code">Source code</string>
+    <string name="hint">Hint</string>
     <string name="cancel">CANCEL</string>
     <string name="doc">DOC</string>
     <string name="about">ABOUT</string>
-    <string name="hint">Hint\n1.Long press input box to paste clipboard data.\n2.Long press DEL button to clear number.</string>
+    <string name="hint_content">1.Long press input box to paste clipboard data.\n2.Long press DEL button to clear number.</string>
     <string name="radix">radix</string>
     <string name="hint1">Enter number</string>
     <string name="more_radix"><![CDATA[< More radix click here]]></string>
     <string name="banner_ad_unit_id_about" translatable="false">ca-app-pub-1898879602336181/2071744470</string>
     <string name="banner_ad_unit_id_doc" translatable="false">ca-app-pub-1898879602336181/9790522205</string>
     <string name="banner_ad_app_id" translatable="false">ca-app-pub-1898879602336181~9491069494</string>
+    <string name="feedback">Feedback</string>
+    <string name="version_code">4.0.3</string>
 </resources>

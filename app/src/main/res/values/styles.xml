@@ -32,6 +32,21 @@
         <item name="android:ems">28</item>
     </style>
 
+    <style name="CardListSingleLine">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:background">@drawable/linear_bg</item>
+    </style>
+
+    <style name="CardListMultipleItem" parent="CardListSingleLine">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+    </style>
+
     <style name="Key">
         <item name="android:textColor">@color/colorTextPrimary</item>
         <item name="android:background">@drawable/btn_key</item>

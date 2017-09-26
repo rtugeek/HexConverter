@@ -5,13 +5,16 @@
     <string name="clipboard_3">剪切板中无数据</string>
     <string name="clipboard_2">数字格式不正确——</string>
     <string name="clipboard_1">剪切板中数字大于进制值——</string>
-    <string name="about_3"><a href="https://github.com/rtugeek/HexConverter">View Source Code On Github</a></string>
-    <string name="about_1">Version 4.0\n有什么建议或意见:\n邮箱:rtugeek@gmail.com</string>
     <string name="about">关于</string>
     <string name="cancel">取消</string>
     <string name="radix">进制</string>
     <string name="hint1">请输入十进制数</string>
-    <string name="hint">提示：\n1.长按输入框粘贴剪切板内容.\n2.长按DEL清空输入框内容.</string>
+    <string name="hint">提示</string>
     <string name="doc">文档</string>
     <string name="more_radix"><![CDATA[<点击圆圈,选取更多进制]]></string>
+    <string name="changelog">更新日志</string>
+    <string name="feedback">意见反馈</string>
+    <string name="source_code">查看源代码</string>
+    <string name="hint_content">1.长按输入框粘贴剪切板内容.\n2.长按DEL清空输入框内容.</string>
+    <string name="version">版本</string>
 </resources>
