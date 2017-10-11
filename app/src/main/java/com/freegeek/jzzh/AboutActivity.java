@@ -8,9 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.android.gms.ads.AdRequest;
+import com.freegeek.jzzh.util.GoogleUtil;
 import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,14 +21,9 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        MobileAds.initialize(this, getString(R.string.banner_ad_app_id));
         AdView  adView= (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest
-                .Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-//                .addTestDevice("FDB0071175F992F0E734958D8ECE00B9")
-                .build();
-        adView.loadAd(adRequest);
+        adView.loadAd(GoogleUtil.newAdRequest());
+
     }
 
     @Override
@@ -50,6 +44,13 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
                 startActivity(intent);
+                break;
+            case R.id.linear_feedback:
+                Intent data=new Intent(Intent.ACTION_SENDTO);
+                data.setData(Uri.parse("mailto:rtugeek@gmail.com"));
+                data.putExtra(Intent.EXTRA_SUBJECT, "进制转换反馈");
+                data.putExtra(Intent.EXTRA_TEXT, "");
+                startActivity(data);
                 break;
         }
     }

@@ -2,14 +2,16 @@
 <resources>    
     <color name="input_enable_color">#FF0099CC</color>
     <color name="input_disenable_color">#FFB0B0B0</color>
-    <color name="colorPrimary">#1794EB</color>
-	<color name="colorPrimaryDark">#ff0171c9</color>
-	<color name="colorAccent">#FF00E5FF</color>	 
+    <color name="colorPrimary">#607D8B</color>
+	<color name="colorPrimaryDark">#455A64</color>
+	<color name="colorPrimaryLight">#CFD8DC</color>
+	<color name="colorAccent">#009688</color>
 	<color name="colorControlNormal">#FF78909C</color>  
 	<color name="colorControlActivated">#FF03A9F4</color>
 	<color name="colorSwitchThumbNormal">#FF78909C</color>  		
 	<color name="white">#FFFFFFFF</color>
-	<color name="colorTextPrimary">#FF383838</color>
+	<color name="colorTextPrimary">#212121</color>
+	<color name="textColorHint">#FFD4D4D4</color>
 
     <color name="rb_checked">#FF4CAF50</color>
     <color name="rb_unchecked">#FF6D6D6D</color>

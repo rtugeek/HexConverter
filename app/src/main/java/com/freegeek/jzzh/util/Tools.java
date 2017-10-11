@@ -1,10 +1,12 @@
-package com.freegeek.jzzh;
+package com.freegeek.jzzh.util;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
 import android.text.TextUtils;
+
+import com.freegeek.jzzh.R;
 
 public class Tools {
 	static BigInteger mBigData1, mIntegerOfRadix;

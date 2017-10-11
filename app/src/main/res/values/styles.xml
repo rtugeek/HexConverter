@@ -24,7 +24,7 @@
 
     <style name="CardEditText">
         <item name="android:textColor">@color/colorPrimary</item>
-        <item name="android:textColorHint">#FFD4D4D4</item>
+        <item name="android:textColorHint">@color/textColorHint</item>
         <item name="android:background">@null</item>
         <item name="android:inputType">numberDecimal</item>
         <item name="android:textCursorDrawable">@null</item>

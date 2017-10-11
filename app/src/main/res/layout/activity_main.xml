@@ -37,7 +37,6 @@
                 style="@style/CardEditText"
                 android:id="@+id/et_dec"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:digits="0123456789."
                 android:text=""
                 android:hint="@string/hint1"

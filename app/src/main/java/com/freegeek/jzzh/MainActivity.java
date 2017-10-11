@@ -3,6 +3,7 @@ package com.freegeek.jzzh;
 import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void initView() {
         mTvLabelMisc = (TextView) findViewById(R.id.tv_label_misc);
-        mCurrentEditText = (RadixEditText) findViewById(R.id.et_misc);
         mKeyboard = (Keyboard) findViewById(R.id.keyboard);
         clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 mTvLabelMisc.setText(radix[i]);
-                mCurrentEditText.setRadix(Integer.parseInt(radix[i]));
+                ((RadixEditText) findViewById(R.id.et_misc))
+                        .setRadix(Integer.parseInt(radix[i]));
             }
         }).setNegativeButton(R.string.cancel, null).create();
 
@@ -112,20 +113,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     * highlight focused edit text
-     * @param radix
+     * Highlight focused edit text, edit text with 10 radix is special one.
+     * @param radix which radix to highlight.
      */
     private void updateColor(int radix){
+        int colorHint = getResources().getColor(R.color.textColorHint);
+        int white = getResources().getColor(R.color.white);
+        int colorPrimary = getResources().getColor(R.color.colorPrimary);
         for (RadixEditText radixEditText : RadixEditText.getRadixEditTexts()) {
-            if(radixEditText.getRadix() == 10) continue;
             if(radixEditText.getRadix() == radix){
-                int color = getResources().getColor(R.color.colorPrimary);
+                int color = radix == 10 ? white : colorPrimary;
                 radixEditText.setTextColor(color);
                 radixEditText.setHintTextColor(color);
                 continue;
             }
-            radixEditText.setTextColor(0xFF616161);
+            if(radixEditText.getRadix() == 10){
+                radixEditText.setHintTextColor(colorHint);
+                radixEditText.setTextColor(colorHint);
+                continue;
+            }
             radixEditText.setHintTextColor(0xFFD4D4D4);
+            radixEditText.setTextColor(0xFF616161);
+
         }
     }
 

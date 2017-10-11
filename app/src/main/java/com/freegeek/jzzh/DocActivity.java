@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-import com.google.android.gms.ads.AdRequest;
+import com.freegeek.jzzh.util.GoogleUtil;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
@@ -27,14 +27,9 @@ public class DocActivity extends AppCompatActivity {
         wv.getSettings().setBuiltInZoomControls(true);
         wv.loadUrl("file:///android_asset/help.htm");
 
-        MobileAds.initialize(this, getString(R.string.banner_ad_app_id));
         AdView adView= (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest
-                .Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-//                .addTestDevice("FDB0071175F992F0E734958D8ECE00B9")
-                .build();
-        adView.loadAd(adRequest);
+        adView.loadAd(GoogleUtil.newAdRequest());
+
     }
 
     @Override

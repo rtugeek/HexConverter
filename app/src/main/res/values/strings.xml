@@ -22,5 +22,5 @@
     <string name="banner_ad_unit_id_doc" translatable="false">ca-app-pub-1898879602336181/9790522205</string>
     <string name="banner_ad_app_id" translatable="false">ca-app-pub-1898879602336181~9491069494</string>
     <string name="feedback">Feedback</string>
-    <string name="version_code">4.0.3</string>
+    <string name="version_code" translatable="false">4.0.3</string>
 </resources>

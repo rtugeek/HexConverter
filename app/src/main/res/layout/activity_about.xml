@@ -62,7 +62,7 @@
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
                                     android:layout_gravity="center_vertical"
-                                    android:src="@drawable/ic_launcher" />
+                                    android:src="@mipmap/ic_launcher" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
@@ -112,31 +112,8 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                style="@style/CardListSingleLine"
-                                android:id="@+id/changelog"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/icon_changelog"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    app:srcCompat="@drawable/ic_history_black_24dp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="32dp"
-                                    android:layout_marginStart="32dp"
-                                    android:paddingBottom="8dp"
-                                    android:paddingTop="8dp"
-                                    android:text="@string/changelog"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
+                                android:id="@+id/linear_feedback"
+                                android:onClick="onClick"
                                 style="@style/CardListSingleLine"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

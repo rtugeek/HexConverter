@@ -16,7 +16,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.freegeek.jzzh.R;
-import com.freegeek.jzzh.Tools;
+import com.freegeek.jzzh.util.Tools;
 
 /*********************************************************************************
  Created by Android Studio.

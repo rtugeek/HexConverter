@@ -15,7 +15,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.freegeek.jzzh.R;
-import com.freegeek.jzzh.Tools;
+import com.freegeek.jzzh.util.Tools;
 
 import java.util.ArrayList;
 import java.util.List;
