@@ -8,9 +8,14 @@ import android.text.TextUtils;
 
 import com.freegeek.jzzh.R;
 
+/**
+ * @author Jack Fu <rtugeek@gmail.com>
+ * @date 2017/11/15
+ * @description
+ */
 public class Tools {
-	static BigInteger mBigData1, mIntegerOfRadix;
-	static String digits = "0123456789ABCDEF";
+	private static BigInteger mBigData, mIntegerOfRadix;
+	private static String digits = "0123456789ABCDEF";
 
 	/**
 	 * @param data
@@ -24,7 +29,9 @@ public class Tools {
 			result = digits.charAt(data.remainder(mIntegerOfRadix).intValue()) + result;
 			data = data.divide(mIntegerOfRadix);
 		}
-		if(TextUtils.isEmpty(result))result="0";
+		if(TextUtils.isEmpty(result)){
+			result="0";
+		}
 		return result;
 	}
 
@@ -46,12 +53,12 @@ public class Tools {
 			data = integerConverter(data, 10, fromRadix);
 			return integerConvertTo10(new BigInteger(data), toRadix);
 		}else{
-			mBigData1 =new BigInteger("0");
+			mBigData =new BigInteger("0");
 			for(int i = len - 1; i >=0; i--){
 				mIntegerOfRadix =new BigDecimal(digits.indexOf(chars[i])*Math.pow(fromRadix, len - i - 1)).toBigInteger();
-				mBigData1 = mBigData1.add(mIntegerOfRadix);
+				mBigData = mBigData.add(mIntegerOfRadix);
 			}
-			return mBigData1.toString();
+			return mBigData.toString();
 		}
 	}
 
@@ -72,7 +79,9 @@ public class Tools {
 		//if specified radix(toRadix) is not base 10, covert decimals in base 10
 		if(formRadix != 10){
 			data = decimalsConvertTo10(data, formRadix);
-			if(toRadix == 10) return data;
+			if(toRadix == 10){
+				return data;
+			}
 		}
 		char[] chars = digits.toCharArray();
 		int integer;
@@ -90,7 +99,9 @@ public class Tools {
 			}
 		}
 
-		if(result.length() == 0) result = "0";
+		if(result.length() == 0){
+			result = "0";
+		}
 		return result;
 
 	}
@@ -147,7 +158,9 @@ public class Tools {
 		data.replaceAll(" ", "");
 		String digits=".0123456789ABCDEF";
 		//can only contains one point
-		if(data.split("\\.").length > 2) return false;
+		if(data.split("\\.").length > 2){
+			return false;
+		}
 		for(int i = 0;i<data.length();i++){
 			char digit = data.charAt(i);
 			int index = digits.indexOf(digit);

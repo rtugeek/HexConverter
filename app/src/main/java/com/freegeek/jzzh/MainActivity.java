@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -20,12 +21,15 @@ import android.widget.Toast;
 import com.freegeek.jzzh.view.Keyboard;
 import com.freegeek.jzzh.view.RadixEditText;
 
-
+/**
+ * @author Jack Fu <rtugeek@gmail.com>
+ * @date 2017/11/15
+ * @description
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private AlertDialog radixPickerDialog;
     private TextView mTvLabelMisc;
-    private RadixEditText et_misc;
     private RadixEditText mCurrentEditText;
     private Keyboard mKeyboard;
     private ClipboardManager clipboardManager;
@@ -39,7 +43,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
     }
 
-    // Menu icons are inflated just as they were with actionbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -62,21 +65,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }).setNegativeButton(R.string.cancel, null).create();
 
         mTvLabelMisc.setOnClickListener(this);
-        mKeyboard.setVisibility(View.GONE);
         mKeyboard.setOnKeyboardListener(new Keyboard.OnKeyboardListener() {
             @Override
             public void onKeyboardClickListener(Button button, String value) {
-                if(value.equalsIgnoreCase("DEL")){
+                if("DEL".equalsIgnoreCase(value)){
                     String data =  mCurrentEditText.getText().toString();
                     if(data.trim().length() != 0){
                         mCurrentEditText.setText(data.substring(0, data.length() - 1));
                         mCurrentEditText.setSelection(mCurrentEditText.getText().length());
                     }
-                }else if(value.toUpperCase().equals("COPY")){
+                }else if("COPY".equalsIgnoreCase(value)){
                     clipboardManager.setText(mCurrentEditText.getText().toString().replaceAll(" ", ""));
                     Toast.makeText(MainActivity.this, getString(R.string.done), Toast.LENGTH_SHORT).show();
-                }else if(value.equals(".")){
-                    if(!mCurrentEditText.getText().toString().contains(".")) mCurrentEditText.append(value);
+                }else if(".".equals(value)){
+                    if(!mCurrentEditText.getText().toString().contains(".")){
+                        mCurrentEditText.append(value);
+                    }
                 }else{
                     mCurrentEditText.append(value);
                 }
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             @Override
             public void onKeyboardLongClickListener(Button button, String value) {
-                if(value.equalsIgnoreCase("DEL")){
+                if("DEL".equalsIgnoreCase(value)){
                     mCurrentEditText.setText("");
                 }
             }
@@ -104,12 +108,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             mCurrentEditText = radixEditText;
                             updateColor(radixEditText.getRadix());
                             break;
+                        default:
+                            break;
                     }
                     return false;
                 }
             });
         }
 
+        //hide the keyboard
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mKeyboard.hide();
+                handler.removeCallbacks(this);
+            }
+        },500);
     }
 
     /**
@@ -144,6 +159,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.tv_label_misc:
                 radixPickerDialog.show();
                 break;
+            default:
+                break;
         }
     }
 
@@ -155,6 +172,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.menu_doc:
                 startActivity(new Intent(this,DocActivity.class));
+                break;
+            default:
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -101,7 +101,9 @@ public class RadixEditText extends AppCompatEditText{
                     //If input empty text, clear all EditText
                     if(TextUtils.isEmpty(input)){
                         for (RadixEditText mRadixEditText : mRadixEditTexts){
-                            if(mRadixEditText.getRadix() != getRadix()) mRadixEditText.setText("");
+                            if(mRadixEditText.getRadix() != getRadix()){
+                                mRadixEditText.setText("");
+                            }
                         }
                         return;
                     }
@@ -118,7 +120,7 @@ public class RadixEditText extends AppCompatEditText{
                             int toRadix = mRadixEditText.getRadix();
                             int fromRadix = getRadix();
                             //if input data only contains integer
-                            if(input.indexOf(".") == -1 || array.length == 1){
+                            if(!input.contains(".") || array.length == 1){
                                 result= Tools.integerConverter(array[0], toRadix, fromRadix);
                             }else{
                                 result= Tools.integerConverter(array[0], toRadix, fromRadix)
@@ -142,7 +144,9 @@ public class RadixEditText extends AppCompatEditText{
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if(mRadixEditTexts.contains(this)) mRadixEditTexts.remove(this);
+        if(mRadixEditTexts.contains(this)){
+            mRadixEditTexts.remove(this);
+        }
     }
 
     /**
@@ -183,13 +187,24 @@ public class RadixEditText extends AppCompatEditText{
     public boolean onTouchEvent(MotionEvent event) {
 
         switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                performClick();
+                break;
             case MotionEvent.ACTION_UP:
                 mFocusedEditText = this;
                 //remove all whitespace
                 setText(getText().toString().replaceAll(" ",""));
                 setSelection(getText().length());
                 break;
+            default:
+                break;
         }
         return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean performClick() {
+        super.performClick();
+        return true;
     }
 }

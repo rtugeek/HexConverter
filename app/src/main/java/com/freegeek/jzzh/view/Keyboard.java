@@ -60,12 +60,28 @@ public class Keyboard extends FrameLayout {
         hide.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
+                setVisibility(GONE);
             }
 
             @Override
             public void onAnimationEnd(Animation animation) {
-                mKeyboardView.setVisibility(GONE);
-                setVisibility(GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+
+        show.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                setVisibility(VISIBLE);
             }
 
             @Override
@@ -94,8 +110,9 @@ public class Keyboard extends FrameLayout {
                     @Override
                     public void onClick(View v) {
                         Button button = (Button) v;
-                        if(mKeyboardListener !=null)
+                        if(mKeyboardListener !=null){
                             mKeyboardListener.onKeyboardClickListener(button,button.getText().toString());
+                        }
                     }
                 });
 
@@ -104,8 +121,9 @@ public class Keyboard extends FrameLayout {
                     @Override
                     public boolean onLongClick(View view) {
                         Button button = (Button) view;
-                        if(mKeyboardListener !=null)
+                        if(mKeyboardListener !=null){
                             mKeyboardListener.onKeyboardLongClickListener(button,button.getText().toString());
+                        }
                         return false;
                     }
 
@@ -115,9 +133,7 @@ public class Keyboard extends FrameLayout {
     }
 
     public void show(){
-        if(isShowing()) return;
-        setVisibility(VISIBLE);
-        mKeyboardView.setVisibility(VISIBLE);
+        if(isShowing()){ return; }
         startAnimation(show);
     };
 
@@ -131,8 +147,8 @@ public class Keyboard extends FrameLayout {
      * @param radix
      */
     public void setRadix(int radix){
-        if(radix > 16) radix = 16;
-        if(radix < 2) radix = 2;
+        if(radix > 16){ radix = 16; }
+        if(radix < 2){ radix = 2; }
         for(int i = 2;i < 16;i++){
             if(Integer.parseInt(keyboardBtn[i].getTag().toString()) >= radix){
                 keyboardBtn[i].setTextColor(getResources().getColor(R.color.input_disenable_color));

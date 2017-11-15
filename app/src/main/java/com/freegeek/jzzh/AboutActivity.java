@@ -11,6 +11,11 @@ import android.view.View;
 import com.freegeek.jzzh.util.GoogleUtil;
 import com.google.android.gms.ads.AdView;
 
+/**
+ * @author Jack Fu <rtugeek@gmail.com>
+ * @date 2017/11/15
+ * @description
+ */
 public class AboutActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
@@ -32,6 +37,8 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
             case android.R.id.home:
                 finish();
                 break;
+            default:
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -51,6 +58,8 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
                 data.putExtra(Intent.EXTRA_SUBJECT, "进制转换反馈");
                 data.putExtra(Intent.EXTRA_TEXT, "");
                 startActivity(data);
+                break;
+            default:
                 break;
         }
     }
