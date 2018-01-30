@@ -17,17 +17,17 @@ public class DocActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doc);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        WebView wv = (WebView)findViewById(R.id.webView1);
+        WebView wv = findViewById(R.id.webView1);
         wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings().setSupportZoom(true);
         wv.getSettings().setBuiltInZoomControls(true);
-        wv.loadUrl("file:///android_asset/help.htm");
+        wv.loadUrl("file:///android_asset/help.html");
 
-        AdView adView= (AdView) findViewById(R.id.adView);
+        AdView adView= findViewById(R.id.adView);
         adView.loadAd(GoogleUtil.newAdRequest());
 
     }

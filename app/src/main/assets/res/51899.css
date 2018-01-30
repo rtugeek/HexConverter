@@ -1,0 +1,70 @@
+div.post div.entry
+{
+    font-family:"微软雅黑", Georgia,"Times New Roman",Times,sans-serif;
+}
+div.post div.entry h1, div.post div.entry h2, div.post div.entry h3 {
+	margin-top: 24px;
+	margin-bottom: 12px;
+}
+div.post div.entry h1 {
+	padding: 5px;
+	color:white;
+	background-color: gray;
+}
+div.post div.entry h1 a {
+color:white;
+} 
+
+div.post div.entry h1 a:link  {
+color:white;
+} 
+
+div.post h2 {
+	font-size: 22px;
+	line-height: 100%;
+}
+div.post div.entry pre.code {
+    border-style: dashed;
+    border-left: solid 5px #6ce26c
+}
+div#information
+{
+    background-color: #f8f8ee;
+    border: solid 1px #e8e7d0;
+    padding: 5px 10px 0px 10px;
+    min-height: 10px;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    color: #666666
+}
+
+pre
+{
+  white-space: pre-wrap; 
+  white-space: -moz-pre-wrap; 
+  white-space: -pre-wrap; 
+  white-space: -o-pre-wrap; 
+}
+
+#div_digg {
+    position: fixed;
+    bottom: 0;
+    right: 308px;
+    border: 1px dashed #EEE;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: white;
+    z-index: 1001;
+}
+#toTop {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+#toTop:hover {
+    background-position: left top;
+}

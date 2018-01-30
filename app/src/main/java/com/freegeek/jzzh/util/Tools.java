@@ -155,7 +155,7 @@ public class Tools {
 	 * @return weather the data's format match the given radix.
 	 */
 	public static boolean checkData(String data,int radix){
-		data.replaceAll(" ", "");
+		data = data.replaceAll(" ", "");
 		String digits=".0123456789ABCDEF";
 		//can only contains one point
 		if(data.split("\\.").length > 2){

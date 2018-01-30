@@ -22,11 +22,11 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        AdView  adView= (AdView) findViewById(R.id.adView);
+        AdView  adView= findViewById(R.id.adView);
         adView.loadAd(GoogleUtil.newAdRequest());
 
     }

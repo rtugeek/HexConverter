@@ -23,11 +23,11 @@
 
             <Button
                 style="@style/Key"
-                android:id="@+id/input_btn_1"
+                android:id="@+id/input_btn_7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="1"
-                android:text="1"/>
+                android:tag="7"
+                android:text="7"/>
 
             <Button
                 android:id="@+id/input_btn_4"
@@ -38,11 +38,11 @@
                  style="@style/Key"/>
 
             <Button
-                android:id="@+id/input_btn_7"
+                android:id="@+id/input_btn_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="7"
-                android:text="7"
+                android:tag="1"
+                android:text="1"
                  style="@style/Key"/>
 
             <Button
@@ -63,11 +63,11 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/input_btn_2"
+                android:id="@+id/input_btn_8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="2"
-                android:text="2"
+                android:tag="8"
+                android:text="8"
                  style="@style/Key"/>
 
             <Button
@@ -78,12 +78,11 @@
                 android:text="5"
                  style="@style/Key"/>
             <Button
-                android:id="@+id/input_btn_8"
+                android:id="@+id/input_btn_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="8"
-
-                android:text="8"
+                android:tag="2"
+                android:text="2"
                  style="@style/Key"/>
 
             <Button
@@ -103,11 +102,11 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/input_btn_3"
+                android:id="@+id/input_btn_9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="3"
-                android:text="3"
+                android:tag="9"
+                android:text="9"
                  style="@style/Key"/>
 
             <Button
@@ -119,11 +118,11 @@
                  style="@style/Key"/>
 
             <Button
-                android:id="@+id/input_btn_9"
+                android:id="@+id/input_btn_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tag="9"
-                android:text="9"
+                android:tag="3"
+                android:text="3"
                  style="@style/Key"/>
 
             <Button

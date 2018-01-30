@@ -17,4 +17,5 @@
     <string name="source_code">查看源代码</string>
     <string name="hint_content">1.长按输入框粘贴剪切板内容.\n2.长按DEL清空输入框内容.</string>
     <string name="version">版本</string>
+    <string name="app_feedback">进制转换反馈</string>
 </resources>
