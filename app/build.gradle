@@ -7,7 +7,7 @@ android {
 //        applicationId "com.freegeek.jzzh"
         applicationId "com.example.jzzh"
         minSdkVersion 15
-        versionCode 12
+        versionCode 13
         versionName "4.1.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
@@ -25,6 +25,18 @@ android {
         }
     }
     compileSdkVersion 27
+    buildTypes {
+        release {
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+//            shrinkResources true
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 }
 
 dependencies {

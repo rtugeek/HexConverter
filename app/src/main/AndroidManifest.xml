@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.freegeek.jzzh.AboutActivity" />
+        <activity android:name="com.freegeek.jzzh.AboutActivity"
+            android:label="@string/about"/>
         <activity
             android:name="com.freegeek.jzzh.DocActivity"
             android:label="@string/doc"
