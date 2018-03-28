@@ -7,10 +7,6 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-import com.freegeek.jzzh.util.GoogleUtil;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
-
 public class DocActivity extends AppCompatActivity {
 
     @Override
@@ -27,8 +23,7 @@ public class DocActivity extends AppCompatActivity {
         wv.getSettings().setBuiltInZoomControls(true);
         wv.loadUrl("file:///android_asset/help.html");
 
-        AdView adView= findViewById(R.id.adView);
-        adView.loadAd(GoogleUtil.newAdRequest());
+
 
     }
 

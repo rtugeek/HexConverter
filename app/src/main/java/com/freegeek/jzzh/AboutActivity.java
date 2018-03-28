@@ -2,14 +2,11 @@ package com.freegeek.jzzh;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
-
-import com.freegeek.jzzh.util.GoogleUtil;
-import com.google.android.gms.ads.AdView;
 
 /**
  * @author Jack Fu <rtugeek@gmail.com>
@@ -26,8 +23,6 @@ public class AboutActivity extends AppCompatActivity implements View.OnClickList
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        AdView  adView= findViewById(R.id.adView);
-        adView.loadAd(GoogleUtil.newAdRequest());
 
     }
 

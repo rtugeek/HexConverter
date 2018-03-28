@@ -17,9 +17,6 @@
     <string name="radix">radix</string>
     <string name="hint1">Enter number</string>
     <string name="more_radix"><![CDATA[< More radix click here]]></string>
-    <string name="banner_ad_unit_id_about" translatable="false">ca-app-pub-1898879602336181/2071744470</string>
-    <string name="banner_ad_unit_id_doc" translatable="false">ca-app-pub-1898879602336181/9790522205</string>
-    <string name="banner_ad_app_id" translatable="false">ca-app-pub-1898879602336181~9491069494</string>
     <string name="feedback">Feedback</string>
     <string name="version_code" translatable="false">4.1.4</string>
     <string name="app_feedback">App feedback</string>
