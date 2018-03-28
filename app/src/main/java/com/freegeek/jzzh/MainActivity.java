@@ -1,14 +1,15 @@
 package com.freegeek.jzzh;
 
+import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -28,17 +29,17 @@ import com.freegeek.jzzh.view.RadixEditText;
  */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private AlertDialog radixPickerDialog;
+    private AlertDialog mRadixPickerDialog;
     private TextView mTvLabelMisc;
     private RadixEditText mCurrentEditText;
     private Keyboard mKeyboard;
-    private ClipboardManager clipboardManager;
+    private ClipboardManager mClipboardManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(getString(R.string.app_name));
         setSupportActionBar(toolbar);
     }
@@ -50,12 +51,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-        mTvLabelMisc = (TextView) findViewById(R.id.tv_label_misc);
-        mKeyboard = (Keyboard) findViewById(R.id.keyboard);
-        clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        mTvLabelMisc = findViewById(R.id.tv_label_misc);
+        mKeyboard = findViewById(R.id.keyboard);
+        mClipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
 
         final String radix[] = {"3", "4", "5", "6", "7", "8", "9", "11", "12", "13", "14", "15"};
-        radixPickerDialog = new AlertDialog.Builder(this).setItems(radix, new DialogInterface.OnClickListener() {
+        mRadixPickerDialog = new AlertDialog.Builder(this).setItems(radix, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 mTvLabelMisc.setText(radix[i]);
@@ -75,10 +76,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         mCurrentEditText.setSelection(mCurrentEditText.getText().length());
                     }
                 }else if("COPY".equalsIgnoreCase(value)){
-                    clipboardManager.setText(mCurrentEditText.getText().toString().replaceAll(" ", ""));
+                    String data = mCurrentEditText.getText().toString().replaceAll(" ", "");
+                    ClipData clipData = ClipData.newPlainText("Data",data);
+                    mClipboardManager.setPrimaryClip(clipData);
                     Toast.makeText(MainActivity.this, getString(R.string.done), Toast.LENGTH_SHORT).show();
                 }else if(".".equals(value)){
-                    if(!mCurrentEditText.getText().toString().contains(".")){
+                    if(TextUtils.isEmpty(mCurrentEditText.getText())){
+                        mCurrentEditText.append("0.");
+                    }else if(!mCurrentEditText.getText().toString().contains(".")){
                         mCurrentEditText.append(value);
                     }
                 }else{
@@ -115,6 +120,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             });
         }
+
+        mCurrentEditText =  RadixEditText.getRadixEditTexts().get(0);
 
         //hide the keyboard
         final Handler handler = new Handler();
@@ -157,7 +164,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_label_misc:
-                radixPickerDialog.show();
+                mRadixPickerDialog.show();
                 break;
             default:
                 break;

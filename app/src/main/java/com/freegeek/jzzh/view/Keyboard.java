@@ -18,19 +18,19 @@ import android.widget.FrameLayout;
 import com.freegeek.jzzh.R;
 import com.freegeek.jzzh.util.Tools;
 
-/*********************************************************************************
- Created by Android Studio.
- *Author:          Jack Fu                                              <br/>
- *Version:         1.0                                                  <br/>
- *Date;            9/20/17 8:39 PM                                      <br/>
- *Description:     Virtual keyboard for inputting number, the radix decides <br/>
+/**
+ * @author Jack Fu <rtugeek@gmail.com>
+ * @date 2017/09/20
+ * @description
+ * Virtual keyboard for inputting number, the radix decides <br/>
  * which buttons are available
- **********************************************************************************/
+ */
 public class Keyboard extends FrameLayout {
-    private Button[] keyboardBtn = new Button[20];
-    private Animation show,hide;
+
+    private Button[] mKeyboardBtn = new Button[20];
+    private Animation mShow, mHide;
     private OnKeyboardListener mKeyboardListener;
-    private View mKeyboardView;
+
     public Keyboard(@NonNull Context context) {
         super(context);
         addView(context);
@@ -54,10 +54,10 @@ public class Keyboard extends FrameLayout {
 
     public void addView(Context context){
 
-        show = AnimationUtils.loadAnimation(context, R.anim.bottom_in);
-        hide = AnimationUtils.loadAnimation(context, R.anim.bottom_out);
+        mShow = AnimationUtils.loadAnimation(context, R.anim.bottom_in);
+        mHide = AnimationUtils.loadAnimation(context, R.anim.bottom_out);
 
-        hide.setAnimationListener(new Animation.AnimationListener() {
+        mHide.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
                 setVisibility(GONE);
@@ -73,7 +73,7 @@ public class Keyboard extends FrameLayout {
             }
         });
 
-        show.setAnimationListener(new Animation.AnimationListener() {
+        mShow.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
 
@@ -90,22 +90,22 @@ public class Keyboard extends FrameLayout {
             }
         });
 
-        mKeyboardView = LayoutInflater.from(context).inflate(R.layout.keyboard,null);
-        addView(mKeyboardView);
+        View keyboardView = LayoutInflater.from(context).inflate(R.layout.keyboard,null);
+        addView(keyboardView);
 
         //init input buttons
-        for(int i = 0;i < keyboardBtn.length; i++){
-            keyboardBtn[i] = mKeyboardView.findViewById(Tools.getIdByResourceName("input_btn_" + i));
+        for(int i = 0; i < mKeyboardBtn.length; i++){
+            mKeyboardBtn[i] = keyboardView.findViewById(Tools.getIdByResourceName("input_btn_" + i));
             if(i == 18){
-                keyboardBtn[i].setOnClickListener(new OnClickListener() {
+                mKeyboardBtn[i].setOnClickListener(new OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
-                        startAnimation(hide);
+                        startAnimation(mHide);
                     }
                 });
             }else{
-                keyboardBtn[i].setOnClickListener(new OnClickListener() {
+                mKeyboardBtn[i].setOnClickListener(new OnClickListener() {
 
                     @Override
                     public void onClick(View v) {
@@ -116,7 +116,7 @@ public class Keyboard extends FrameLayout {
                     }
                 });
 
-                keyboardBtn[i].setOnLongClickListener(new OnLongClickListener() {
+                mKeyboardBtn[i].setOnLongClickListener(new OnLongClickListener() {
 
                     @Override
                     public boolean onLongClick(View view) {
@@ -134,11 +134,11 @@ public class Keyboard extends FrameLayout {
 
     public void show(){
         if(isShowing()){ return; }
-        startAnimation(show);
+        startAnimation(mShow);
     };
 
     public void hide(){
-        startAnimation(hide);
+        startAnimation(mHide);
     }
 
     /**
@@ -150,12 +150,12 @@ public class Keyboard extends FrameLayout {
         if(radix > 16){ radix = 16; }
         if(radix < 2){ radix = 2; }
         for(int i = 2;i < 16;i++){
-            if(Integer.parseInt(keyboardBtn[i].getTag().toString()) >= radix){
-                keyboardBtn[i].setTextColor(getResources().getColor(R.color.input_disenable_color));
-                keyboardBtn[i].setEnabled(false);
+            if(Integer.parseInt(mKeyboardBtn[i].getTag().toString()) >= radix){
+                mKeyboardBtn[i].setTextColor(getResources().getColor(R.color.input_disenable_color));
+                mKeyboardBtn[i].setEnabled(false);
             }else{
-                keyboardBtn[i].setEnabled(true);
-                keyboardBtn[i].setTextColor(getResources().getColor(R.color.colorTextPrimary));
+                mKeyboardBtn[i].setEnabled(true);
+                mKeyboardBtn[i].setTextColor(getResources().getColor(R.color.colorTextPrimary));
             }
         }
     }
