@@ -1,4 +1,4 @@
-![](./art/Screenshot_2017-10-11-14-18-40-507_com.freegeek.jzzh.png)  
+![](./art/Screenshot_2018-03-28-12-38-54-742_com.freegeek.jzzh.jpg)  
 
 License
 --------
