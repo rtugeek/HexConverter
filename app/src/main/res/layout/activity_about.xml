@@ -1,232 +1,217 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.freegeek.jzzh.DocActivity">
+    tools:context="com.freegeek.jzzh.AboutActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/MyStyle.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/MyStyle.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <android.support.constraint.ConstraintLayout
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@android:color/transparent">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <android.support.v4.widget.NestedScrollView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/adView"
-                android:background="@android:color/transparent"
-                android:layout_alignParentTop="true">
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                app:cardUseCompatPadding="true">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <android.support.v7.widget.CardView
-                        android:layout_margin="16dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="72dp"
+                        android:orientation="horizontal"
+                        android:padding="16dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@mipmap/ic_launcher" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="16dp"
+                            android:text="@string/app_name"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/CardListSingleLine"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        app:cardUseCompatPadding="true">
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_info_grey_600_24dp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:orientation="vertical">
+                            android:layout_marginStart="32dp"
+                            android:layout_marginLeft="32dp"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="72dp"
-                                android:orientation="horizontal"
-                                android:padding="16dp">
-
-                                <ImageView
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:layout_gravity="center_vertical"
-                                    android:src="@mipmap/ic_launcher" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:paddingLeft="16dp"
-                                    android:paddingRight="16dp"
-                                    android:text="@string/app_name"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                style="@style/CardListSingleLine"
-                                android:layout_width="match_parent"
+                            <TextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:text="@string/version"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:src="@drawable/ic_info_grey_600_24dp"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="32dp"
-                                    android:layout_marginStart="32dp"
-                                    android:orientation="vertical"
-                                    android:paddingBottom="8dp"
-                                    android:paddingTop="8dp">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/version"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
-                                    <TextView
-                                        android:id="@+id/app_version"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/version_code"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:id="@+id/linear_feedback"
-                                android:onClick="onClick"
-                                style="@style/CardListSingleLine"
-                                android:layout_width="match_parent"
+                            <TextView
+                                android:id="@+id/app_version"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:src="@drawable/ic_email_grey_600_24dp"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="32dp"
-                                    android:layout_marginStart="32dp"
-                                    android:orientation="vertical"
-                                    android:paddingBottom="8dp"
-                                    android:paddingTop="8dp">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/feedback"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/email"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-                                </LinearLayout>
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                style="@style/CardListSingleLine"
-                                android:id="@+id/linear_code"
-                                android:onClick="onClick"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    app:srcCompat="@drawable/ic_github_circle_grey_24dp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="32dp"
-                                    android:layout_marginStart="32dp"
-                                    android:paddingBottom="8dp"
-                                    android:paddingTop="8dp"
-                                    android:text="@string/source_code"
-                                    android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                style="@style/CardListSingleLine"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="top"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:layout_marginTop="16dp"
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    app:srcCompat="@drawable/ic_bookmark_black_24dp" />
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="32dp"
-                                    android:layout_marginStart="32dp"
-                                    android:orientation="vertical"
-                                    android:paddingBottom="8dp"
-                                    android:paddingTop="8dp">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:paddingBottom="8dp"
-                                        android:paddingTop="8dp"
-                                        android:text="@string/hint"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/hint_content"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
-                                </LinearLayout>
-
-
-                            </LinearLayout>
-
-
+                                android:text="@string/version_code"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_feedback"
+                        style="@style/CardListSingleLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_email_grey_600_24dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginLeft="32dp"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/feedback"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/email"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_code"
+                        style="@style/CardListSingleLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onClick">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            app:srcCompat="@drawable/ic_github_circle_grey_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginLeft="32dp"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp"
+                            android:text="@string/source_code"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        style="@style/CardListSingleLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="16dp"
+                            app:srcCompat="@drawable/ic_bookmark_black_24dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="32dp"
+                            android:layout_marginLeft="32dp"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="8dp"
+                                android:paddingBottom="8dp"
+                                android:text="@string/hint"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hint_content"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
                 </LinearLayout>
 
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
 
 
-            </android.support.v4.widget.NestedScrollView>
+    </androidx.core.widget.NestedScrollView>
 
-
-        </RelativeLayout>
-
-    </android.support.constraint.ConstraintLayout>
-
-
-
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

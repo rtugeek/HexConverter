@@ -11,7 +11,6 @@ import com.freegeek.jzzh.R;
 /**
  * @author Jack Fu <rtugeek@gmail.com>
  * @date 2017/11/15
- * @description
  */
 public class Tools {
 	private static BigInteger mBigData, mIntegerOfRadix;

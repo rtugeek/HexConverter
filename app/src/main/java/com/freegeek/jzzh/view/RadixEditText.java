@@ -3,8 +3,7 @@ package com.freegeek.jzzh.view;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatEditText;
+import android.os.Build;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextUtils;
@@ -12,6 +11,7 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.freegeek.jzzh.R;
@@ -20,6 +20,9 @@ import com.freegeek.jzzh.util.Tools;
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatEditText;
+
 /*********************************************************************************
  Created by Android Studio.
  *Author:          Jack Fu
@@ -27,7 +30,7 @@ import java.util.List;
  *Date;            9/19/17 3:20 PM
  *Description:     
  **********************************************************************************/
-public class RadixEditText extends AppCompatEditText{
+public class RadixEditText extends AppCompatEditText {
     private int mRadix;
     private static ClipboardManager mClipboardManager;
     private static List<RadixEditText> mRadixEditTexts = new ArrayList<>();
@@ -35,50 +38,55 @@ public class RadixEditText extends AppCompatEditText{
      * Save the RadixEditText which is focusing;
      */
     private static RadixEditText mFocusedEditText;
+
     public RadixEditText(Context context) {
         super(context);
-        applyStyle(context,null,0,0);
+        applyStyle(context, null, 0, 0);
     }
 
     public RadixEditText(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        applyStyle(context,attrs,0,0);
+        applyStyle(context, attrs, 0, 0);
     }
 
     public RadixEditText(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        applyStyle(context,attrs,defStyleAttr,0);
+        applyStyle(context, attrs, defStyleAttr, 0);
     }
 
 
     public void applyStyle(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RadixEditText,defStyleAttr,defStyleRes);
-        mRadix = typedArray.getInteger(R.styleable.RadixEditText_radix,10);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.RadixEditText, defStyleAttr, defStyleRes);
+        mRadix = typedArray.getInteger(R.styleable.RadixEditText_radix, 10);
         mClipboardManager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
         mRadixEditTexts.add(this);
-        setInputType(InputType.TYPE_NULL);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            setShowSoftInputOnFocus(false);
+        } else {
+            setInputType(InputType.TYPE_NULL);
+        }
 
         setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                if(mClipboardManager.hasText()){
-                    final String clipboardString= mClipboardManager.getText().toString().replaceAll(" ", "");
-                    if(TextUtils.isEmpty(clipboardString)){
+                if (mClipboardManager.hasText()) {
+                    final String clipboardString = mClipboardManager.getText().toString().replaceAll(" ", "");
+                    if (TextUtils.isEmpty(clipboardString)) {
                         Toast.makeText(getContext(),
-                                getContext().getString(R.string.clipboard_3)+clipboardString,
+                                getContext().getString(R.string.clipboard_3) + clipboardString,
                                 Toast.LENGTH_LONG)
                                 .show();
                         return true;
                     }
-                    if(Tools.checkData(clipboardString,getRadix())){
+                    if (Tools.checkData(clipboardString, getRadix())) {
                         setText(clipboardString);
-                    }else{
+                    } else {
                         Toast.makeText(getContext(),
-                                getContext().getString(R.string.clipboard_1)+clipboardString,
+                                getContext().getString(R.string.clipboard_1) + clipboardString,
                                 Toast.LENGTH_LONG)
                                 .show();
                     }
-                }else{
+                } else {
                     Toast.makeText(getContext(),
                             getContext().getString(R.string.clipboard_3), Toast.LENGTH_SHORT)
                             .show();
@@ -97,11 +105,11 @@ public class RadixEditText extends AppCompatEditText{
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String input = charSequence.toString();
                 //Prevent the infinite loop.
-                if(mFocusedEditText == RadixEditText.this){
+                if (mFocusedEditText == RadixEditText.this) {
                     //If input empty text, clear all EditText
-                    if(TextUtils.isEmpty(input)){
-                        for (RadixEditText mRadixEditText : mRadixEditTexts){
-                            if(mRadixEditText.getRadix() != getRadix()){
+                    if (TextUtils.isEmpty(input)) {
+                        for (RadixEditText mRadixEditText : mRadixEditTexts) {
+                            if (mRadixEditText.getRadix() != getRadix()) {
                                 mRadixEditText.setText("");
                             }
                         }
@@ -113,18 +121,18 @@ public class RadixEditText extends AppCompatEditText{
                         return;
                     }
 
-                    for (RadixEditText mRadixEditText : mRadixEditTexts){
-                        if(mRadixEditText.getRadix() != getRadix()){
+                    for (RadixEditText mRadixEditText : mRadixEditTexts) {
+                        if (mRadixEditText.getRadix() != getRadix()) {
                             String result = "";
                             String[] array = input.split("\\.");
                             int toRadix = mRadixEditText.getRadix();
                             int fromRadix = getRadix();
                             //if input data only contains integer
-                            if(!input.contains(".") || array.length == 1){
-                                result= Tools.integerConverter(array[0], toRadix, fromRadix);
-                            }else{
-                                result= Tools.integerConverter(array[0], toRadix, fromRadix)
-                                        +"."+ Tools.decimalsConverter(array[1], toRadix, fromRadix);
+                            if (!input.contains(".") || array.length == 1) {
+                                result = Tools.integerConverter(array[0], toRadix, fromRadix);
+                            } else {
+                                result = Tools.integerConverter(array[0], toRadix, fromRadix)
+                                        + "." + Tools.decimalsConverter(array[1], toRadix, fromRadix);
                             }
                             mRadixEditText.setText(formatData(result));
                         }
@@ -144,27 +152,26 @@ public class RadixEditText extends AppCompatEditText{
     @Override
     protected void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        if(mRadixEditTexts.contains(this)){
-            mRadixEditTexts.remove(this);
-        }
+        mRadixEditTexts.remove(this);
     }
 
     /**
      * format data, insert whitespace into the given data every four character<br/>
      * eg.  111011001 -> 1110 1100 1
+     *
      * @param s
      * @return
      */
-    private String formatData(String s){
+    private String formatData(String s) {
         int length = s.length();
-        StringBuffer stringBuffer = new StringBuffer(s);
+        StringBuilder stringBuilder = new StringBuilder(s);
         int i = 0;
-        while (length > 4){
+        while (length > 4) {
             length -= 4;
-            stringBuffer.insert((i + 1) * 4 + i," ");
+            stringBuilder.insert((i + 1) * 4 + i, " ");
             i++;
         }
-        return stringBuffer.toString();
+        return stringBuilder.toString();
     }
 
     public int getRadix() {
@@ -186,14 +193,14 @@ public class RadixEditText extends AppCompatEditText{
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 performClick();
                 break;
             case MotionEvent.ACTION_UP:
                 mFocusedEditText = this;
                 //remove all whitespace
-                setText(getText().toString().replaceAll(" ",""));
+                setText(getText().toString().replaceAll(" ", ""));
                 setSelection(getText().length());
                 break;
             default:

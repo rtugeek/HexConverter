@@ -1,8 +1,8 @@
 package com.freegeek.jzzh;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -22,9 +22,6 @@ public class DocActivity extends AppCompatActivity {
         wv.getSettings().setSupportZoom(true);
         wv.getSettings().setBuiltInZoomControls(true);
         wv.loadUrl("file:///android_asset/help.html");
-
-
-
     }
 
     @Override

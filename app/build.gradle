@@ -1,19 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
-    buildToolsVersion "27.0.3"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
     lintOptions {
         checkReleaseBuilds false
         abortOnError false
     }
     defaultConfig {
-//        applicationId "com.freegeek.jzzh"
         applicationId "com.example.jzzh"
         minSdkVersion 15
         versionCode 13
         versionName "4.1.4"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         targetSdkVersion 27
     }
@@ -42,16 +41,12 @@ android {
 }
 
 dependencies {
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0-alpha4', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "com.android.support:cardview-v7:$compileVersion"
-    implementation "com.android.support:appcompat-v7:$compileVersion"
-    implementation "com.android.support:design:$compileVersion"
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    implementation "com.android.support:support-v4:$compileVersion"
-    implementation "com.android.support:recyclerview-v7:$compileVersion"
+    implementation 'com.google.android.material:material:1.0.0'
 }
 

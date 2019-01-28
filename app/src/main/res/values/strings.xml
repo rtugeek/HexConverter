@@ -1,22 +1,21 @@
 <resources>
 
     <string name="app_name">Hex Converter</string>
-    <string name="done">Contents have been copied to the clipboard</string>
+    <string name="done">Copied!</string>
     <string name="clipboard_3">Clipboard is empty</string>
-    <string name="clipboard_2">Incorrect data--</string>
-    <string name="clipboard_1">Number do not match the radix--</string>
+    <string name="clipboard_2">Incorrect data:</string>
+    <string name="clipboard_1">Number do not match the radix:</string>
     <string name="version">Version</string>
     <string name="email" translatable="false">rtugeek@gmail.com</string>
     <string name="changelog">Changelog</string>
     <string name="source_code">Source code</string>
     <string name="hint">Hint</string>
-    <string name="cancel">CANCEL</string>
     <string name="doc">DOC</string>
     <string name="about">ABOUT</string>
     <string name="hint_content">1.Long press input box to paste clipboard data.\n2.Long press DEL button to clear number.</string>
     <string name="radix">radix</string>
     <string name="hint1">Enter number</string>
-    <string name="more_radix"><![CDATA[< More radix click here]]></string>
+    <string name="more_radix"><![CDATA[< Tap circle to pick more radix]]></string>
     <string name="feedback">Feedback</string>
     <string name="version_code" translatable="false">4.1.4</string>
     <string name="app_feedback">App feedback</string>

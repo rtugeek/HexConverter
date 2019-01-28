@@ -3,10 +3,9 @@
     <string name="app_name">进制转换</string>
     <string name="done">内容已复制到剪切板</string>
     <string name="clipboard_3">剪切板中无数据</string>
-    <string name="clipboard_2">数字格式不正确——</string>
-    <string name="clipboard_1">剪切板中数字大于进制值——</string>
+    <string name="clipboard_2">数字格式不正确:</string>
+    <string name="clipboard_1">剪切板中数字大于进制值:</string>
     <string name="about">关于</string>
-    <string name="cancel">取消</string>
     <string name="radix">进制</string>
     <string name="hint1">请输入十进制数</string>
     <string name="hint">提示</string>
